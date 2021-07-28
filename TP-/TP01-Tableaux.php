@@ -15,7 +15,7 @@ echo '<ul>';
                     $key
                     <ul>
                         <li>Prénom : $personne[prenom]</li>
-                        <li>Ville : $personne[ville]</li>
+                        <li>VilleSetter : $personne[ville]</li>
                         <li>Age : $personne[age]</li>
                     </ul>
               </li>";

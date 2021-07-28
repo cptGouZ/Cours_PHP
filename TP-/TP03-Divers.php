@@ -40,21 +40,18 @@ echo 'Le pgcd entre 42 et 21 est : ' . pgcd(180,525) . '<br>';
 
 
 echo '<h3>Triangle de pascal</h3>';
-function triangeDePascal(int $nbIteration): array{
-    $triangle = [[1]];
-    for($i=0;$i<$nbIteration; $i++){
-        array_push($triangle, calculLigneDePascal( $triangle[count($triangle)-1] ));
+function triangeDePascal($nbIteration){
+    $triangle = [1];
+    echo count($triangle);
+    for($lig=1;$lig<=$nbIteration; $lig++){
+        $ligne = [1];
+        for($col=1; $col<count($triangle); $col++) {
+            $ligne [$col] = $triangle[$lig-1][$col-1] + $triangle[$lig-1][$col];
+        }
+        $ligne [] =1;
+        $triangle [] = $ligne;
     }
     return $triangle;
 }
-function calculLigneDePascal(array $lignePrecedente): array{
-    $triangle = [];
-    array_push($triangle, 1);
-    for($i=1; $i<count($lignePrecedente); $i++){
-        array_push($triangle, $lignePrecedente[$i]+$lignePrecedente[$i-1]);
-    }
-    array_push($triangle, 1);
-    return $triangle;
-}
-$resultat = triangeDePascal(10);
+$resultat = triangeDePascal(5);
 var_dump( $resultat);
