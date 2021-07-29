@@ -1,0 +1,23 @@
+<!DOCTYPEhtml>
+<htmllang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulairetraitementàpart</title>
+</head>
+    <body><h1>Formulairetraitementàpart</h1>
+        <form action="formulaireTraitement.php?nom2=toto"method="POST" enctype="multipart/form-data">
+            <label for="idFichier">Fichier:</label>
+            <input type="file" name="fichier" id="idFichier"/><br>
+            <label for="idNom">Nom:</label>
+            <input type="text" name="nom" id="idNom"><br>
+            <label for="idAge">Âge:</label>
+            <input type="number" name="saisie[age]" id="idAge"><br>
+            <label for="idMail">E-Mail:</label>
+            <input type="email" name="saisie[email]" id="idMail"><br>
+            <label for="idMdp">Motdepasse:</label>
+            <input type="password" name="saisie[mdp]" title="8caractèresminimumavecaumoinsunemajuscule,uneminisculeetunchiffre" required
+                   id="idMdp"pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"><br>
+            <input type="submit" name="ok" value="Valider">
+        </form>
+    </body>
+</html>
