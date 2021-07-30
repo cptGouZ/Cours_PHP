@@ -47,3 +47,13 @@ $nom = 'b';
 
 $rowcount = $prepared->execute();
 //endregion
+
+//region Multiples Requetes
+$requete = $pdo->query('SELECT * FROM modeles;
+                                  SELECT * FROM voitures;');
+//Boucles permettant de parcourir tous les "SELECT" fait dans la requête
+do{
+    $resultat = $requete->fetchAll();
+    var_dump($resultat );
+}while($requete->nextRowset());
+//endregion
