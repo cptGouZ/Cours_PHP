@@ -1,6 +1,6 @@
 <?php
 require_once 'dao/connexion.php';
-//region Sans requête préparée (le fetch ou fetch all consomme la requête)
+//region Sans requête préparée (fetch all consomme la requête)
 //Récupération multilignes
 $query = $pdo->query('SELECT * FROM stagiaires');
 $stagiaires = $query->fetchAll();
